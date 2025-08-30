@@ -11,6 +11,11 @@ checkButton.addEventListener("click", function() {
 		errorSpan.style.display = "";
 		return;
 	}
+	if ((bill < 0) || (tipPercent) < 0) {
+		errorSpan.textContent = "Введите неотрицательные числа";
+		errorSpan.style.display = "";
+		return;
+	}
 
 	tipPercent /= 100;
 
