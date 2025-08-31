@@ -19,5 +19,5 @@ checkButton.addEventListener("click", function() {
 
 	tipPercent /= 100;
 
-	totalAmount.textContent = bill * tipPercent;
+	totalAmount.textContent = (bill * tipPercent).toFixed(2);
 });
