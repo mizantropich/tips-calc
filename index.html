@@ -14,8 +14,15 @@
     <main>
         <input type="number" id="billAmount" placeholder="сумма заказа" min="0">
 				<input type="number" id="tipPercent" placeholder="процент чаевых" min="0">
+				<input type="number" id="personCount" placeholder="количество персон" min="0" value="1">
+				<div>
+					<button id="fivePercent">5%</button>
+					<button id="tenPercent">10%</button>
+					<button id="fifteenPercent">15%</button>
+				</div>
 				<button type="submit" id="checkButton">Посчитать</button>
 				<div>Итого: <span id="totalAmount">XX</span> руб</div>
+				<div>На человека: <span id="perPerson">XX</span> руб</div>
 				<span id="errorSpan" style="display: none; color: red;"></span>
     </main>
     <script src="script.js"></script>
