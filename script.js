@@ -2,6 +2,34 @@ const billInput = document.getElementById("billAmount");
 const tipInput = document.getElementById("tipPercent");
 const personInput = document.getElementById("personCount");
 
+document.addEventListener("DOMContentLoaded", function() {
+	if (localStorage.getItem("bill")) {
+		billInput.value = localStorage.getItem("bill");
+	}
+	if (localStorage.getItem("tip")) {
+		tipInput.value = localStorage.getItem("tip");
+	}
+	if (localStorage.getItem("person")) {
+		personInput.value = localStorage.getItem("person");
+	}
+
+	if (billInput.value || tipInput.value) {
+		getTip();
+	}
+});
+
+billInput.addEventListener("input", function() {
+	localStorage.setItem("bill", billInput.value);
+});
+
+tipInput.addEventListener("input", function() {
+	localStorage.setItem("tip", tipInput.value);
+});
+
+personInput.addEventListener("input", function() {
+	localStorage.setItem("person", personInput.value);
+});
+
 const getTip = function getTip() {
 	let bill = billInput.value;
 	let tipPercent = tipInput.value;
@@ -32,16 +60,19 @@ const getTip = function getTip() {
 checkButton.addEventListener("click", getTip);
 
 fivePercent.addEventListener("click", function() {
-	tipPercent.value = 5;
+	tipInput.value = 5;
+	localStorage.setItem("tip", 5);
 	getTip();
 });
 
 tenPercent.addEventListener("click", function() {
-	tipPercent.value = 10;
+	tipInput.value = 10;
+	localStorage.setItem("tip", 10);
 	getTip();
 });
 
 fifteenPercent.addEventListener("click", function() {
-	tipPercent.value = 15;
+	tipInput.value = 15;
+	localStorage.setItem("tip", 15);
 	getTip();
 });
